@@ -17,16 +17,16 @@ Checking for function docstring:
 	True
 
 Both Strings
-	>>> say_my_name("Elon", "Musk")
-	My name is Elon Musk
+	>>> say_my_name("John", "Doe")
+	My name is John Doe
 
 Single parameter string
-	>>> say_my_name("Elon")
-	My name is Elon 
+	>>> say_my_name("John")
+	My name is John 
 
 Parenthesis
-	>>> say_my_name(("Thomas"), "Edison")
-	My name is Thomas Edison
+	>>> say_my_name(("boy"), "state")
+	My name is boy state
 
 No parameter
 	>>> say_my_name()
@@ -39,11 +39,11 @@ None
 	TypeError: first_name must be a string
 
 Non String parameters
-        >>> say_my_name("Elon", 3)
+        >>> say_my_name("John", 3)
 	Traceback (most recent call last):
 	TypeError: last_name must be a string
 
-	>>> say_my_name(Thomas, "Edison")
+	>>> say_my_name(3j, "state")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
@@ -51,10 +51,10 @@ Non String parameters
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
-	>>> say_my_name([], "Edison")
+	>>> say_my_name([], "state")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
-	>>> say_my_name(("Thomas", ), "Edison")
+	>>> say_my_name(("boy", ), "state")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
