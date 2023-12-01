@@ -1,60 +1,53 @@
 ===========================
-How to Use matrix_divided
+How to use 3-say_my_name.py
 ===========================
 
+``def say_my_name(first_name, last_name="")`` collects two arguments
+the first_name and last_name
+
 Usage
--------------------
+=====
 
-Importing the function from the module:
-        >>> say_my_name = __import__("3-say_my_name").say_my_name
+``def say_my_name(...)`` is the two arguments and only the first argument
+is compulsory and second argument is pre-defined to empty string
 
-Checking for module docstring:
-	>>> len(__import__("3-say_my_name").__doc__) > 1
-	True
+::
 
-Checking for function docstring:
-	>>> len(__import__("3-say_my_name").say_my_name.__doc__) > 1
-	True
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Mustapha", "Oyebamiji")
+    My name is Mustapha Oyebamiji
 
-Both Strings
-	>>> say_my_name("John", "Smith")
-	My name is John Smith
+You can only input the first_name
 
-Single parameter string
-	>>> say_my_name("John")
-	My name is John 
+::
 
-Parenthesis
-	>>> say_my_name(("boy"), "state")
-	My name is boy state
+    >>> say_my_name("Mustapha")
+    My name is Mustapha 
 
-No parameter
-	>>> say_my_name()
-	Traceback (most recent call last):
-	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+Invalid name
+============
 
-None
-	>>> say_my_name(None)
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
+the both name must be an instance of a string
+or else it raises the TypeError
 
-Non String parameters
-        >>> say_my_name("John", 3)
-	Traceback (most recent call last):
-	TypeError: last_name must be a string
+if any of the name is number or none
 
-	>>> say_my_name(3j, "state")
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
+::
 
-	>>> say_my_name(3, 5)
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
+    >>> say_my_name(1, "Mustapha")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
 
-	>>> say_my_name([], "state")
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
+::
 
-	>>> say_my_name(("boy", ), "state")
-	Traceback (most recent call last):
-	TypeError: first_name must be a string
+    >>> say_my_name("Mustapha", 1)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+if both is not string
+
+::
+
+    >>> say_my_name(1, 1)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
