@@ -14,15 +14,15 @@ is compulsory and second argument is pre-defined to empty string
 ::
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
-    >>> say_my_name("Mustapha", "Oyebamiji")
-    My name is Mustapha Oyebamiji
+    >>> say_my_name("Jeremiah", "Adetunji")
+    My name is Jeremiah Adetunji
 
 You can only input the first_name
 
 ::
 
-    >>> say_my_name("Mustapha")
-    My name is Mustapha 
+    >>> say_my_name("Jeremiah")
+    My name is Adetunji
 
 Invalid name
 ============
@@ -34,13 +34,13 @@ if any of the name is number or none
 
 ::
 
-    >>> say_my_name(1, "Mustapha")
+    >>> say_my_name(1, "Jeremiah")
     Traceback (most recent call last):
     TypeError: first_name must be a string
 
 ::
 
-    >>> say_my_name("Mustapha", 1)
+    >>> say_my_name("Jeremiah", 1)
     Traceback (most recent call last):
     TypeError: last_name must be a string
 
