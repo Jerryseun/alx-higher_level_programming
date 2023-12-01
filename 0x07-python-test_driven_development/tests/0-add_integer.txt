@@ -1,64 +1,62 @@
 ===========================
-How to use 0-add_integer.py
+How to Use 0-add_integer.py
 ===========================
 
-This module defines the integer addition of '2' numbers ``add_integer(a, b=98)``.
-
 Usage
-=====
+-------------------
 
-``add_integer(...)`` is used for integer addition of two numbers, it receives two argument.
-The only one is compulsory while the second is initially set to 98.
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
 
-::
+Checking for module docstring:
+	 >>> len(__import__("0-add_integer").__doc__) > 1
+	 True
 
-    >>> add_integer = __import__('0-add_integer').add_integer
-    >>> add_integer(2, 3)
-    5
+Checking for function docstring:
+	 >>> len(__import__("0-add_integer").add_integer.__doc__) > 1
+         True
 
-::
+Integers
+	>>> add_integer(2, 3)
+	5
 
-    >>> add_integer(2, -3)
-    -1
+Negative Integer
+	>>> add_integer(-1, 1)
+	0
 
-The function work with floating point numbers but it convert them to int
+Floats
+	>>> add_integer(2.6, 3.55)
+	5
 
-::
+Empty parameter
+	>>> add_integer(0.3, )
+	98
 
-    >>> add_integer(2.3, 3.2)
-    5
+String
+	>>> add_integer(2, "3")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
 
-::
+String, Negative number
+	>>> add_integer("Ade", -87)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
 
-    >>> add_integer(2)
-    100
+Long Integer
+	>>> add_integer(7876545667789809, 3)
+	7876545667789812
 
-Non-numbers
-===========
+Tuple, String
+	>>> add_integer((9, ), "Jeremiah")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
 
-``add_integer(...)`` only accept an int and a floatng point numbers otherwise it raises
-a TypeError
+Float, List
+	>>> add_integer(3876.765, [])
+	Traceback (most recent call last):
+	TypeError: b must be an integer
 
-::
-
-    >>> add_integer("a", 3)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-::
-
-    >>> add_integer(None)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-::
-
-    >>> add_integer(3, "a")
-    Traceback (most recent call last):
-    TypeError: b must be an integer
-
-::
-
-    >>> add_integer(3, None)
-    Traceback (most recent call last):
-    TypeError: b must be an integer
+None, Dictionary
+	>>> add_integer(None, {4: "Jerry"})
+	Traceback (most recent call last):
+	TypeError: a must be an integer

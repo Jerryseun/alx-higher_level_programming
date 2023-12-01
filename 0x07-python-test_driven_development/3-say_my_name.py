@@ -1,18 +1,14 @@
 #!/usr/bin/python3
-"""
-Print the name of a user
-"""
+""" function that prints My name is <first name> <last name> """
 
 
 def say_my_name(first_name, last_name=""):
-    """a program to print name
-
-    first_name: the firstname string
-    last_name: the second string
-
+    """ This function prints name (<first name> <last name>)
+    Args:
+        first_name (str): The fisrt name to be printed
+        last_name (str): The last name to be printed
     Raises:
-        TypeError: if first_name is not instance of str
-        TypeError: if last_name is not intance of str
+        TypeError: If either the first_name and last_name are not strings
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")

@@ -1,53 +1,60 @@
 ===========================
-How to use 3-say_my_name.py
+How to Use matrix_divided
 ===========================
 
-``def say_my_name(first_name, last_name="")`` collects two arguments
-the first_name and last_name
-
 Usage
-=====
+-------------------
 
-``def say_my_name(...)`` is the two arguments and only the first argument
-is compulsory and second argument is pre-defined to empty string
+Importing the function from the module:
+        >>> say_my_name = __import__("3-say_my_name").say_my_name
 
-::
+Checking for module docstring:
+	>>> len(__import__("3-say_my_name").__doc__) > 1
+	True
 
-    >>> say_my_name = __import__('3-say_my_name').say_my_name
-    >>> say_my_name("Jeremiah", "Adetunji")
-    My name is Jeremiah Adetunji
+Checking for function docstring:
+	>>> len(__import__("3-say_my_name").say_my_name.__doc__) > 1
+	True
 
-You can only input the first_name
+Both Strings
+	>>> say_my_name("Elon", "Musk")
+	My name is Elon Musk
 
-::
+Single parameter string
+	>>> say_my_name("Elon")
+	My name is Elon 
 
-    >>> say_my_name("Jeremiah")
-    My name is Adetunji
+Parenthesis
+	>>> say_my_name(("Thomas"), "Edison")
+	My name is Thomas Edison
 
-Invalid name
-============
+No parameter
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
-the both name must be an instance of a string
-or else it raises the TypeError
+None
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
 
-if any of the name is number or none
+Non String parameters
+        >>> say_my_name("Elon", 3)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
 
-::
+	>>> say_my_name(Thomas, "Edison")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
 
-    >>> say_my_name(1, "Jeremiah")
-    Traceback (most recent call last):
-    TypeError: first_name must be a string
+	>>> say_my_name(3, 5)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
 
-::
+	>>> say_my_name([], "Edison")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
 
-    >>> say_my_name("Jeremiah", 1)
-    Traceback (most recent call last):
-    TypeError: last_name must be a string
-
-if both is not string
-
-::
-
-    >>> say_my_name(1, 1)
-    Traceback (most recent call last):
-    TypeError: first_name must be a string
+	>>> say_my_name(("Thomas", ), "Edison")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
